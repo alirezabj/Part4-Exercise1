@@ -65,6 +65,12 @@
 The temporary directory's lifespan is managed by the Zipper class, which creates it in the constructor (Files.createTempDirectory(...)) and deletes it in the close() method. Since Zipper implements AutoCloseable, the directory is automatically cleaned up when the object is closed, typically using a try-with-resources block in Exercise1. The Handler class and its anonymous subclass process files within the temporary directory but do not affect its lifespan since they exist only while Zipper is active. TestZipper extends Zipper, defining file handling behavior without modifying the directory’s lifecycle. Therefore, the directory exists only during the execution of Zipper and is removed once the process is complete. 
 
 
+### D)
+
+The class signature protected abstract static class Handler is structured this way to control access, enforce required behavior, and keep it independent of Zipper instances. The protected keyword ensures that only Zipper and its subclasses (like TestZipper) can use or extend it, preventing external access. The abstract keyword makes Handler a template that must be extended by another class, ensuring each handler defines its own way of processing files. The static keyword is appropriate because Handler does not need access to any instance variables or methods from Zipper, meaning it can be used without creating an instance of Zipper. This keeps the structure clean, avoids unnecessary dependencies, and allows file handlers to function independently while still being logically grouped within Zipper.
+
+
+
 
 
 
