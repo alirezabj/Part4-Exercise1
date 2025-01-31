@@ -1,6 +1,6 @@
 # Part4-Exercise1
 
-#### A)
+### A)
 
 ###### Exercise
 - Construct type: Concrete class
@@ -25,4 +25,37 @@ Reason: It represents an abstraction for handling files. Each file has its own h
 
 Construct type: Anonymous subclass of Handler
 Reason: Since file handling logic is needed only once per file, defining a full class separately would be unnecessary. Instead, an anonymous class provides a one time specialized implementation of handle().
+
+
+### B)
+
+###### Exercise
+- Why: Exercise1 is the entry point of the program, meaning it needs to execute the main logic.
+- Key features: Uses try-with-resources for proper cleanup.
+- Why not others: Interfaces cannot have constructors and cannot instantiate objects.
+
+
+###### Zipper
+- Why: 
+- Key features:
+- Why not others:
+
+  
+###### TestZipper
+- Why: 
+- Key features:
+- Why not others:
+
+  
+###### Handler (inner class inside Zipper)
+- Why: 
+- Key features:
+- Why not others:
+
+
+###### Anonymous Inner Class (inside TestZipper#createHandler)
+- Why: 
+- Key features:
+- Why not others:
+
 
