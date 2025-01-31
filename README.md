@@ -30,7 +30,7 @@
 
 ### B)
 
-###### Exercise
+###### Exercise1
 - Why: Exercise1 is the entry point of the program, meaning it needs to execute the main logic.
 - Key features: Uses try-with-resources for proper cleanup.
 - Why not others: Interfaces cannot have constructors and cannot instantiate objects.
