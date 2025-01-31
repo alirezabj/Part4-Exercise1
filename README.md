@@ -31,7 +31,7 @@
 ### B)
 
 ###### Exercise1
-- Why: Exercise1 is the entry point of the program, meaning it needs to execute the main logic.
+- Why: It serves as the entry point to demonstrate how Zipper and TestZipper work.
 - Key features: Uses try-with-resources for proper cleanup.
 - Why not others: Interfaces cannot have constructors and cannot instantiate objects.
 
@@ -43,20 +43,20 @@
 
   
 ###### TestZipper
-- Why: 
-- Key features:
-- Why not others:
+- Why: It enforces a structure for file handlers inside Zipper while keeping it independent of Zipper instances.
+- Key features: Overrides abstract methods to define behavior while reusing Zipper's unzipping logic.
+- Why not others: If TestZipper was abstract, it would still need another subclass to be functional, making it unnecessary. Addtionaly, if TestZipper was a seprate class without Extending Zipper, it would need to rewrite the unzipping logic, making the code redundant.
 
   
 ###### Handler (inner class inside Zipper)
-- Why: 
-- Key features:
-- Why not others:
+- Why: It enforces a structure for file handlers inside Zipper while keeping it independent of Zipper instances.
+- Key features: Specified as abstract thus subclasses must implement the handle method. Moreover, it is specified as static, making it independent of Zipper instances and preventing unnecessary dependencies.
+- Why not others: If it was concrete, it would force all handlers to follow a fixed behavior, removing flexibility. Additionaly, Aa interface wouldn't work because Handler includes a constructor to initialize the file path.
 
 
 ###### Anonymous Inner Class (inside TestZipper#createHandler)
-- Why: 
-- Key features:
-- Why not others:
+- Why: It defines file-handling logic in place, avoiding unnecessary new class definitions.
+- Key features: Implements handle dynamically inside TestZippe which reduces redundancy.
+- Why not others: If the handler had a separate class, it would only be used in one place, which would make it unnecessary.
 
 
