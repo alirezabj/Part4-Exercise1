@@ -2,29 +2,30 @@
 
 ### A)
 
-###### Exercise
-- Construct type: Concrete class
-- Reason: it servers as an entry point for executing the program. It initializes the TestZipper instance using a try-with-resources block to ensure proper resource management.
+###### Exercise1
+- Construct type: Concrete class (contains main logic)
+- Reason: It is the the main entry point which shows the use of Zipper and TestZipper, and uses a try-with-resources block to ensure cleanup.
+
 
 ###### Zipper
 
 - Construct type: Abstract class
-- Reason: It provides a general framework for handling ZIP file extraction while leaving the file processing logic to subclasses via an abstract method createHandler(Path file).
+- Reason: It provides a general structure for unzipping files but leaves createHandler unfinished so that other classes must complete it.
 
 ###### TestZipper
 
-- Construct type: Concrete subclass of Zipper
-- Reason: It specializes Zipper by implementing createHandler(Path file) whic defines how extracted files should be processed.
+- Construct type: Concrete class (Concrete subclass of zipper)
+- Reason:  It completes Zipper by defining how each file should be processed which makes it a fully working class.
 
-###### Handler (inner class inside Zipper)
+###### Handler 
 
-- Construct type: Abstract static inner class
-- Reason: It represents an abstraction for handling files. Each file has its own handler instance, but the logic for handling files is defined in subclasses.
+- Construct type: Abstract static inner class 
+- Reason: It is a helper class inside Zipper that sets the rules for handling files but does not define how files should be handled, letting subclasses decide.
 
-###### Anonymous Inner Class (inside TestZipper#createHandler)
+###### Anonymous Class (inside TestZipper#createHandler)
 
 - Construct type: Anonymous subclass of Handler
-- Reason: Since file handling logic is needed only once per file, defining a full class separately would be unnecessary. Instead, an anonymous class provides a one time specialized implementation of handle().
+- Reason: Since file handling logic is needed only once per file, defining a full class separately would be unnecessary. Instead an anonymous class provides a one time implementation of handle().
 
 
 ### B)
@@ -36,9 +37,9 @@
 
 
 ###### Zipper
-- Why: 
-- Key features:
-- Why not others:
+- Why:  It provides a reusable base for unzipping files while allowing subclasses to define custom file handling.
+- Key features: Implements AutoCloseable for automatic resource cleanup and has abstract methods for flexibility and contains shared logic (creating, deleting temp directories, unzipping files). 
+- Why not others: If Zipper was concrete, every subclass would have to use the same file handling logic which makes it less flexible. Additionaly, an interface cannot have implemented methods.
 
   
 ###### TestZipper
