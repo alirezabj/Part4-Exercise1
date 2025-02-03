@@ -43,7 +43,7 @@
 
   
 ###### TestZipper
-- Why: It enforces a structure for file handlers inside Zipper while keeping it independent of Zipper instances.
+- Why: It applies a structure for file handlers inside Zipper while keeping it independent of Zipper instances.
 - Key features: Overrides abstract methods to define behavior while reusing Zipper's unzipping logic.
 - Why not others: If TestZipper was abstract, it would still need another subclass to be functional, making it unnecessary. Addtionaly, if TestZipper was a seprate class without Extending Zipper, it would need to rewrite the unzipping logic, making the code redundant.
 
