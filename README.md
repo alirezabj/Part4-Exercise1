@@ -55,7 +55,7 @@
 
 
 ###### Anonymous Inner Class (inside TestZipper#createHandler)
-- Why: It defines file-handling logic in place, avoiding unnecessary new class definitions.
+- Why: It defines file handling logic in place, avoiding unnecessary new class definitions.
 - Key features: Implements handle dynamically inside TestZippe which reduces redundancy.
 - Why not others: If the handler had a separate class, it would only be used in one place, which would make it unnecessary.
 
