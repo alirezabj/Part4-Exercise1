@@ -49,7 +49,7 @@
 
   
 ###### Handler (inner class inside Zipper)
-- Why: It enforces a structure for file handlers inside Zipper while keeping it independent of Zipper instances.
+- Why: It applies a structure for file handlers inside Zipper while keeping it independent of Zipper instances.
 - Key features: Specified as abstract thus subclasses must implement the handle method. Moreover, it is specified as static, making it independent of Zipper instances and preventing unnecessary dependencies.
 - Why not others: If it was concrete, it would force all handlers to follow a fixed behavior, removing flexibility. Additionaly, Aa interface wouldn't work because Handler includes a constructor to initialize the file path.
 
