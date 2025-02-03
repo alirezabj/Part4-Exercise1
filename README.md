@@ -67,7 +67,7 @@ The temporary directory's lifespan is managed by the Zipper class, which creates
 
 ### D)
 
-The class signature protected abstract static class Handler is structured this way to control access, enforce required behavior, and keep it independent of Zipper instances. The protected keyword ensures that only Zipper and its subclasses (like TestZipper) can use or extend it, preventing external access. The abstract keyword makes Handler a template that must be extended by another class, ensuring each handler defines its own way of processing files. The static keyword is appropriate because Handler does not need access to any instance variables or methods from Zipper, meaning it can be used without creating an instance of Zipper. This keeps the structure clean, avoids unnecessary dependencies, and allows file handlers to function independently while still being logically grouped within Zipper.
+The class signature protected abstract static class Handler is structured this way to control access, apply required behavior, and keep it independent of Zipper instances. The protected keyword ensures that only Zipper and its subclasses (like TestZipper) can use or extend it, preventing external access. The abstract keyword makes Handler a template that must be extended by another class, ensuring each handler defines its own way of processing files. The static keyword is appropriate because Handler does not need access to any instance variables or methods from Zipper, meaning it can be used without creating an instance of Zipper. This keeps the structure clean, avoids unnecessary dependencies, and allows file handlers to function independently while still being logically grouped within Zipper.
 
 
 
