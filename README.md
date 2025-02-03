@@ -4,7 +4,7 @@
 
 ###### Exercise1
 - Construct type: Concrete class (contains main logic)
-- Reason: It is the the main entry point which shows the use of Zipper and TestZipper, and uses a try-with-resources block to ensure cleanup.
+- Reason: It is the the main entry point which shows the use of Zipper and TestZipper and uses a try-with-resources block to ensure cleanup.
 
 
 ###### Zipper
