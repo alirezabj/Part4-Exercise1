@@ -62,7 +62,7 @@
 
 ### C)
 
-The temporary directory's lifespan is managed by the Zipper class, which creates it in the constructor (Files.createTempDirectory(...)) and deletes it in the close() method. Since Zipper implements AutoCloseable, the directory is automatically cleaned up when the object is closed, typically using a try-with-resources block in Exercise1. The Handler class and its anonymous subclass process files within the temporary directory but do not affect its lifespan since they exist only while Zipper is active. TestZipper extends Zipper, defining file handling behavior without modifying the directory’s lifecycle. Therefore, the directory exists only during the execution of Zipper and is removed once the process is complete. 
+The temporary directory's lifespan is managed by the Zipper class, which creates it in the constructor (Files.createTempDirectory(...)) and deletes it in the close() method. Since Zipper implements AutoCloseable, the directory is automatically cleaned up when the object is closed, using a try-with-resources block in Exercise1. The Handler class and its anonymous subclass process files within the temporary directory but do not affect its lifespan since they exist only while Zipper is active. TestZipper extends Zipper, defining file handling behavior without modifying the directory’s lifecycle. Therefore, the directory exists only during the execution of Zipper and is removed once the process is complete. 
 
 
 ### D)
